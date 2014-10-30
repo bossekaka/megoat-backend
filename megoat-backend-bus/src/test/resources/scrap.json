@@ -1,0 +1,35 @@
+{"name": "arne",
+    "cats": [
+    {
+        "name": "home",
+        "path": "/home",
+        "links": [
+            {
+                "name": "hl1",
+                "description": "desc",
+                "url": "www.hl1.se"
+            },
+            {
+                "name": "hl2",
+                "description": "desc",
+                "url": "www.hl2.se"
+            }
+        ]
+    },
+    {
+        "name": "work",
+        "path": "/work",
+        "links": [
+            {
+                "name": "wl1",
+                "description": "desc",
+                "url": "www.wl1.se"
+            },
+            {
+                "name": "wl2",
+                "description": "desc",
+                "url": "www.wl2.se"
+            }
+        ]
+    }
+]}
