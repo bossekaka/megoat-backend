@@ -9,6 +9,8 @@ import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse
 import org.elasticsearch.client.Client
+import org.elasticsearch.common.settings.ImmutableSettings
+import org.elasticsearch.common.settings.Settings
 import org.junit.AfterClass
 import org.junit.BeforeClass
 import org.junit.Test
@@ -32,7 +34,9 @@ class EsTest {
 
         EsClientCreator esClientCreator = Mockito.mock(EsClientCreator.class)
 
-        Client client = nodeBuilder().clusterName("test").local(true).node().client()
+        Settings settings = ImmutableSettings.settingsBuilder().put("cluster.name", "test").put("index.store.type", "memory").build()
+
+        Client client = nodeBuilder().settings(settings).clusterName("test").local(true).node().client()
         when(esClientCreator.createClient()).thenReturn(client)
 
         // create index

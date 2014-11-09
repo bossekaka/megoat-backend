@@ -12,6 +12,7 @@
     <artifactId>megoat-backend-bus</artifactId>
     <packaging>war</packaging>
 
+
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -41,9 +42,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-databind</artifactId>-->
-            <!--<version>2.1.3</version>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-databind</artifactId>-->
+        <!--<version>2.1.3</version>-->
         <!--</dependency>-->
 
         <dependency>
@@ -52,9 +53,9 @@
             <version>2.2.0</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.jaxrs</groupId>-->
-            <!--<artifactId>jackson-jaxrs-json-provider</artifactId>-->
-            <!--<version>2.3.0</version>-->
+        <!--<groupId>com.fasterxml.jackson.jaxrs</groupId>-->
+        <!--<artifactId>jackson-jaxrs-json-provider</artifactId>-->
+        <!--<version>2.3.0</version>-->
         <!--</dependency>-->
 
         <dependency>
@@ -75,6 +76,13 @@
         </dependency>
 
         <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.3.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -86,10 +94,100 @@
             <artifactId>mockito-core</artifactId>
             <version>1.10.8</version>
         </dependency>
+
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>it</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.17</version>
+                        <configuration>
+                            <includes>
+                                <!--includes groovy as well !?-->
+                                <include>**/ItSetUp.class</include>
+                            </includes>
+                            <systemPropertyVariables>
+                                <env>it</env>
+                            </systemPropertyVariables>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.eclipse.jetty</groupId>
+                        <artifactId>jetty-maven-plugin</artifactId>
+                        <version>9.2.3.v20140905</version>
+                        <configuration>
+                            <scanIntervalSeconds>10</scanIntervalSeconds>
+                            <stopKey>foo</stopKey>
+                            <stopPort>9999</stopPort>
+                            <httpConnector>
+                                <host>localhost</host>
+                                <port>8090</port>
+                            </httpConnector>
+                            <daemon>true</daemon>
+                            <webApp>
+                                <contextPath>/</contextPath>
+                            </webApp>
+                            <systemProperties>
+                                <systemProperty>
+                                    <name>env</name>
+                                    <value>it</value>
+                                </systemProperty>
+                            </systemProperties>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>start-jetty</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>start</goal>
+                                </goals>
+                                <configuration>
+                                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>stop-jetty</id>
+                                <phase>post-integration-test</phase>
+                                <goals>
+                                    <goal>stop</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
+        <finalName>megoat</finalName>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.15</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/it/**/*.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
@@ -120,6 +218,27 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.3.v20140905</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <daemon>true</daemon>
+                    <webApp>
+                        <contextPath>/</contextPath>
+                    </webApp>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>env</name>
+                            <value>it</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+
         </plugins>
 
     </build>
