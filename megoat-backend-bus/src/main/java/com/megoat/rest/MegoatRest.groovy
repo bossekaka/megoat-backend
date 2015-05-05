@@ -15,6 +15,7 @@ import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
 import javax.ws.rs.QueryParam
 import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.Response
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,14 +32,14 @@ class MegoatRest implements ServletContextListener {
     @GET
 //    @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.APPLICATION_JSON)
-    Cat getCat(@PathParam("user") String user, @PathParam("path") String path) {
+    Response getCat(@PathParam("user") String user, @PathParam("path") String path) {
 
         println "getting path: $path, user: $user"
 
         //TODO: root does not work (not in es)
         Cat cat = new EsRepository().getCat(user, "/" + path)
 
-        return cat
+        return Response.ok(cat).build()
     }
 
     @Path("{user}")

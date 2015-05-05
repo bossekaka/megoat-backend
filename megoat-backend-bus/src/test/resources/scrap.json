@@ -1,35 +1,264 @@
-{"name": "arne",
-    "cats": [
-    {
-        "name": "home",
-        "path": "/home",
-        "links": [
-            {
-                "name": "hl1",
-                "description": "desc",
-                "url": "www.hl1.se"
-            },
-            {
-                "name": "hl2",
-                "description": "desc",
-                "url": "www.hl2.se"
+{"_meta": {
+    "_origin": "oc",
+    "_created": "Sat Mar 31 00:00:00 CEST 2012",
+    "_updated": "Tue Dec 02 12:56:18 CET 2014",
+    "_id": "oc.c6d2267e-48f0-40f4-9ef6-ede64054f676",
+    "_objectType": "ad",
+    "_originalVersion": "1",
+    "_originalId": "c6d2267e-48f0-40f4-9ef6-ede64054f676"
+}, "id": "oc.c6d2267e-48f0-40f4-9ef6-ede64054f676", "contentObject": {
+    "versions": [
+        {
+            "id": 1,
+            "properties": {
+                "Pubdate": ["2012-03-30T22:00:00Z"],
+                "Product": ["DN"],
+                "Text": ["\nVår kära\nMaj-Britt\nLundström\n* 9 november 1920\n?\n 4 mars 2012\nBERTIL\nMARIANNE och PETER\nChrister och Rosmarie\nMax  Wilmer  Melker\nIngela och Sebastian\nSläkt och vänner \nBlott en dag\nett ögonblick i sänder \nBegravningsakten har ägt rum.\n"],
+                "contenttype": ["Ad"]
             }
-        ]
-    },
-    {
-        "name": "work",
-        "path": "/work",
-        "links": [
-            {
-                "name": "wl1",
-                "description": "desc",
-                "url": "www.wl1.se"
-            },
-            {
-                "name": "wl2",
-                "description": "desc",
-                "url": "www.wl2.se"
-            }
-        ]
-    }
-]}
+        }
+    ],
+    "objectData": [
+        {
+            "editable": true,
+            "multiProperties": [],
+            "contentType": "Ad",
+            "properties": [
+                {
+                    "values": ["application/vnd.infomaker.se-ad"],
+                    "name": "metadata_mimetype",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": true
+                },
+                {
+                    "values": ["Ad"],
+                    "name": "contenttype",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["c6d2267e-48f0-40f4-9ef6-ede64054f676"],
+                    "name": "uuid",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["FA6"],
+                    "name": "AdPlacementName",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": [],
+                    "name": "CompanyName2",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["1"],
+                    "name": "version",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "INTEGER",
+                    "multiValued": false
+                },
+                {
+                    "values": ["DN"],
+                    "name": "ServicePlusProductId",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["DN"],
+                    "name": "AdSource",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["false"],
+                    "name": "deleted",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "BOOLEAN",
+                    "multiValued": false
+                },
+                {
+                    "values": ["2012-03-30T01:00:36Z"],
+                    "name": "updated",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "DATE",
+                    "multiValued": false
+                },
+                {
+                    "values": ["Familj"],
+                    "name": "AdPlacementDescription",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["Döda"],
+                    "name": "AdPositionDescription",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["ADD"],
+                    "name": "eventtype",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["0004216589-01"],
+                    "name": "OrderNumber",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["Familjeannonser"],
+                    "name": "Tag",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["Eftertext"],
+                    "name": "CategoryName",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["2012-03-30T22:00:00Z"],
+                    "name": "Pubdate",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "DATE",
+                    "multiValued": false
+                },
+                {
+                    "values": ["IGNIS BEGRAVNINGSBYRÅER AB"],
+                    "name": "Customer",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["true"],
+                    "name": "latest",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "BOOLEAN",
+                    "multiValued": false
+                },
+                {
+                    "values": ["DN"],
+                    "name": "group",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": true
+                },
+                {
+                    "values": [],
+                    "name": "source",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["2012-03-30T22:00:00Z"],
+                    "name": "RunDate",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "DATE",
+                    "multiValued": true
+                },
+                {
+                    "values": ["DODA6"],
+                    "name": "AdPositionName",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": [],
+                    "name": "fallbackProduct",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["ad713605e7db3e2fd6c5892a3862936441e3e10f5fb838beb3e0f8aa637140a33a0620ecf082b8bcaac191ea184aeffd3a6d0f26c8649cfce0f95268f2637d48"],
+                    "name": "checksum",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["\nVår kära\nMaj-Britt\nLundström\n* 9 november 1920\n?\n 4 mars 2012\nBERTIL\nMARIANNE och PETER\nChrister och Rosmarie\nMax  Wilmer  Melker\nIngela och Sebastian\nSläkt och vänner \nBlott en dag\nett ögonblick i sänder \nBegravningsakten har ägt rum.\n"],
+                    "name": "Text",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["DN"],
+                    "name": "Product",
+                    "readOnly": false,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                },
+                {
+                    "values": ["2012-03-30T01:00:36Z"],
+                    "name": "created",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "DATE",
+                    "multiValued": false
+                },
+                {
+                    "values": ["application/pdf"],
+                    "name": "mimetype",
+                    "readOnly": true,
+                    "multiValues": null,
+                    "type": "STRING",
+                    "multiValued": false
+                }
+            ]
+        }
+    ],
+    "id": "c6d2267e-48f0-40f4-9ef6-ede64054f676",
+    "noVersions": 1
+}}

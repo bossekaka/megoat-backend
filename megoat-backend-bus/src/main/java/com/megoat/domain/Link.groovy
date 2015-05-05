@@ -2,7 +2,7 @@ package com.megoat.domain;
 
 /**
  * Created with IntelliJ IDEA.
- * User: daniel
+ * User: bo kaka
  * Date: 2014-10-27
  * Time: 12:29
  * To change this template use File | Settings | File Templates.
