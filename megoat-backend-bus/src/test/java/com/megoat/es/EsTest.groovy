@@ -41,7 +41,7 @@ class EsTest {
 
         // create index
 //            client.admin().indices().prepareDelete("megoat").execute().actionGet()
-            client.admin().indices().prepareCreate("megoat").execute().actionGet()
+        client.admin().indices().prepareCreate("megoat").execute().actionGet()
 
         // create mapping
         PutMappingResponse response = client.admin().

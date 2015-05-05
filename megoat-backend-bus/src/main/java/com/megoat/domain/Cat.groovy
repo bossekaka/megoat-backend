@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement
 
 /**
  * Created with IntelliJ IDEA.
- * User: daniel
+ * User: arne
  * Date: 2014-10-27
  * Time: 12:33
  * To change this template use File | Settings | File Templates.
